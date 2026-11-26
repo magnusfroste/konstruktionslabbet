@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
+<title>Konstruktionslabbet – stadiga ramar och rätt material</title>
+<meta name="description" content="Konstruktionslabbet: välj den ram som håller, hitta delen som får drag- eller tryckkraft och välj rätt material. Teknik åk 7–9, hållfasta konstruktioner.">
+<meta name="theme-color" content="#FBF7EE">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="stylesheet" href="styles.css">
+<script src="https://www.skolappar.com/kotten.js" defer></script>
+</head>
+<body>
+<div id="app">
+  <header id="hud">
+    <div id="niva" aria-live="polite">Nivå 1</div>
+    <div id="framsteg" aria-label="Uppgift">1 / 9</div>
+    <div id="stjarnor" aria-label="Stjärnor">★ 0</div>
+    <button id="ljudknapp" class="knapp" aria-label="Stäng av ljudet">🔊</button>
+  </header>
+
+  <main id="scen">
+    <p id="fraga"></p>
+    <div id="dukruta"><canvas id="duk" aria-label="Ritning av konstruktionen"></canvas></div>
+    <div id="svar" role="group" aria-label="Svarsalternativ"></div>
+    <p id="svarstext" hidden aria-live="polite"></p>
+  </main>
+</div>
+
+<div id="startskarm">
+  <div class="ark">
+    <h1>Konstruktionslabbet</h1>
+    <p class="ingress">Varför håller en stege, en bro och en kran? Här bygger du med trianglar och väljer material som tål det de ska göra.</p>
+    <ul class="punkter">
+      <li>Nivå 1: vilken ram håller sig rak när lasten kommer på?</li>
+      <li>Nivå 2: vilken del blir sträckt och vilken pressas ihop?</li>
+      <li>Nivå 3: vilket material passar – stål, gummi eller glas?</li>
+    </ul>
+    <button id="starta" class="spela">Spela</button>
+    <p class="larare"><strong>För läraren, teknik åk 7–9.</strong> Ur Lgr22, det centrala innehållet:
+      ”Tekniska lösningar för hållfasta och stabila konstruktioner samt betydelsen av materialens
+      egenskaper, till exempel drag- och tryckhållfasthet, hårdhet och elasticitet.”
+      Eleven tränar varför ett snedstag gör en ram styv, vilka delar i en bärande konstruktion som
+      får drag- respektive tryckkraft, och hur materialens elasticitet och hållfasthet avgör valet.
+      Källa: Skolverket, Lgr22.</p>
+  </div>
+</div>
+
+<div id="klarskarm" hidden>
+  <div class="ark litet">
+    <div class="stor-stjarna">★</div>
+    <h2 id="klar-rubrik">Nivå 1 klar</h2>
+    <p id="klar-text">Ramen höll.</p>
+    <button id="nasta" class="spela">Nästa nivå</button>
+    <button id="stangKlar" class="lank">Tillbaka till start</button>
+  </div>
+</div>
+
+<script src="data.js"></script>
+<script src="ljud/lines.js"></script>
+<script src="ljud/rosten.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
