@@ -42,17 +42,11 @@
   function säg(text) {
     if (!S.ljud || !text) return;
     if (window.__rost && window.__rost(text)) return;
-    try {
-      if (!('speechSynthesis' in window)) return;
-      window.speechSynthesis.cancel();
-      var u = new SpeechSynthesisUtterance(text);
-      u.lang = 'sv-SE'; u.rate = 0.95; u.pitch = 1;
-      window.speechSynthesis.speak(u);
-    } catch (e) {}
+        console.warn('saknar mp3:', text);
   }
   function tyst() {
     try { if (window.__rostStopp) window.__rostStopp(); } catch (e) {}
-    try { if ('speechSynthesis' in window) window.speechSynthesis.cancel(); } catch (e) {}
+    try { if (window.__rostStopp) window.__rostStopp(); } catch (e) {}
   }
 
   /* ---------- canvas ---------- */
